@@ -1,15 +1,14 @@
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
-// import 'body-parser' module
 
 const app = express();
 
 app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
-// parse incoming json
+// parse incoming json using express.json()
 
-// parse urlencoded bodies
+// parse urlencoded application/x-www-form-urlencoded bodies express.urlencoded({ extended: false }) 
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
