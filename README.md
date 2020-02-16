@@ -28,7 +28,7 @@ Let's code along the solutions to the following tasks.
     - Task
       - Serve the following object as json
       ```js
-      { community: 'founders & coders' }
+      { community: 'Gaza Sky Geeks' }
       ```
     - Notes
       - Go to Chrome Dev Tools -> Network; and check if the content type is `application/json`. You may need to hard reload chrome.
@@ -98,11 +98,6 @@ Let's code along the solutions to the following tasks.
                 └── fruit.js
                 └── index.js
         ```
-
-
-## Tips
-
-- You can run `nodemon` in a quiet mode with: `nodemon app.js -q`
 
 
 ## Resources
