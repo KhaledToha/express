@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // set cache age (maxAge) to 30 days
 app.use(
-  express.static(path.join(__dirname, '..', 'public'), { maxAge: '30d' })
+  express.static(path.join(__dirname, '..', 'public'))
 );
 
 app.get('/fruit', (req, res) => {
