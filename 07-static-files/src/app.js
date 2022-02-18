@@ -1,10 +1,7 @@
 const express = require('express');
 const path = require('path');
-// import 'serve-favicon' module
 
 const app = express();
-
-// use favicon middleware
 
 // use static middleware
 
