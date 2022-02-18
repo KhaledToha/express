@@ -45,21 +45,6 @@ Let's code along the solutions to the following tasks.
     - Task
       - Serve `Hello New York` on the `/new-york`, `/newyork` paths. Use only one route handler to handle the requests.
 
-1. **My logger middleware**
-    - Task
-      - Add a logging middleware that logs millisecond timestamp (`Date.now()`) **before** any request to our server is handled.
-      - Add a logging middleware that logs millisecond timestamp (`Date.now()`) **after** every request to our server.
-      ![middleware flow](./images/middleware.jpg)
-    - Notes
-      - Middleware and routing functions are called in the order that they are declared. For some middleware the order is important (for example if session middleware depends on cookie middleware, then the cookie handler must be added first). It is almost always the case that middleware is called before setting routes, or your route handlers will not have access to functionality added by your middleware.
-      - The **only** difference between a middleware function and a route handler callback is that middleware functions have a **third argument `next`**, which middleware functions are expected to call if they do not complete the request cycle
-
-1. **Morgan logger middleware**
-    - Task
-      - Add a `morgan` middleware to log standard Apache combined server log output
-      - Save logs in the `access.log` file in the `logs-demo` folder
-      - Compare the server logs by trying two different browsers
-
 1. **Static files**
     - Task
       - Serve static files from the `public` folder
@@ -88,7 +73,7 @@ Let's code along the solutions to the following tasks.
         3. Then seperate routes out into individual files.
 
         ```
-        13-split-into-modules
+        11-split-into-modules
         ├── public
         └── src
             └── app.js
