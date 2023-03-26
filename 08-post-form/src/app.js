@@ -4,9 +4,11 @@ const path = require('path');
 const app = express();
 
 // parse incoming json using express.json()
+app.use(express.json())
+
 
 // parse urlencoded application/x-www-form-urlencoded bodies express.urlencoded({ extended: false }) 
-
+app.use(express.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/fruit', (req, res) => {
@@ -15,6 +17,13 @@ app.get('/fruit', (req, res) => {
 
 // create a post '/fruit' handler and log 'name' and 'image_url'
 // redirect to '/fruit'
+
+app.post('/fruit',(req,res)=>{
+  console.log(req.body.name);
+  console.log(req.body.image_url);
+  res.redirect('../')
+  
+})
 
 app.listen(3000, () => {
   console.log('App running on port 3000');

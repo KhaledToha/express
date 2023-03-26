@@ -20,8 +20,15 @@ app.post('/fruit', (req, res) => {
 });
 
 // create a 404 middleware sending the '404.html' file
+app.use((req, res, next) => {
+  res.status(404).send("Sorry can't find that!")
+})
 
 // create a 500 middleware sending the '500.html' file
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
 
 app.listen(3000, () => {
   console.log('App running on port 3000');

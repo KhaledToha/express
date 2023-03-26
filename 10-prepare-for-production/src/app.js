@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const compression = require('compression');
 
 // import compression module
 
@@ -7,16 +8,20 @@ const app = express();
 
 // disable powered by express header
 
+app.disable('x-powered-by')
+
 // set port number
 
-// use compression middleware
+app.set('port', process.env.PORT || 3000);
 
+// use compression middleware
+app.use(compression())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // set cache age (maxAge) to 30 days
 app.use(
-  express.static(path.join(__dirname, '..', 'public'))
+  express.static(path.join(__dirname, '..', 'public'),{maxAge: 30*24*60*60*1000})
 );
 
 app.get('/fruit', (req, res) => {
